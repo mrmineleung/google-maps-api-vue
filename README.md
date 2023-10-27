@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-# google-maps-api-vue
-=======
 # vue-google-maps-api
 
-This template should help get you started developing with Vue 3 in Vite.
+Google Maps API Project by Vue3 + TypesScript
 
 ## Recommended IDE Setup
 
@@ -47,4 +44,4 @@ npm run build
 ```sh
 npm run lint
 ```
->>>>>>> b109e96 (First init)
+
