@@ -1,6 +1,12 @@
 # vue-google-maps-api
 
+Link : https://google-maps-api-vue.vercel.app/
+
 Google Maps API Project by Vue3 + TypesScript
+
+![image](https://github.com/mrmineleung/google-maps-api-vue/assets/42923346/d2b114f9-0661-4957-a5fa-192a0a986b18)
+![image](https://github.com/mrmineleung/google-maps-api-vue/assets/42923346/dc818943-6758-473c-976c-fb9446662822)
+![image](https://github.com/mrmineleung/google-maps-api-vue/assets/42923346/e431b64e-0644-4d8f-9130-b5493edbe633)
 
 ## Recommended IDE Setup
 
