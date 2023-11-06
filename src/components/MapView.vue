@@ -16,8 +16,8 @@ import { ref, watch } from 'vue'
 export default {
   props: ['locations', 'latestLocation'],
   setup(props) {
-    const coords = ref<{lat: number, lng: number}>({ lat: 51.5072, lng: 0.1276 })
-    const markerDetails = ref<{ position: { lat: number, lng: number}}[]>([])
+    const coords = ref<{ lat: number, lng: number }>({ lat: 51.5072, lng: 0.1276 })
+    const markerDetails = ref<{ position: { lat: number, lng: number } }[]>([])
 
     watch(() => props.latestLocation, (newLocation) => {
       if (newLocation) {
@@ -29,7 +29,7 @@ export default {
 
     watch(() => props.locations, (locations) => {
       markerDetails.value = []
-      locations.forEach((location : { lat : number, lng : number}) => {
+      locations.forEach((location: { lat: number, lng: number }) => {
         markerDetails.value.push({ position: { lat: location.lat, lng: location.lng } })
       });
     }, { immediate: true, deep: true });
@@ -41,17 +41,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.search-box {
-  margin: 10px 0px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.location-details {
-  color: black;
-  font-size: 12px;
-  font-weight: 500;
-}
-</style>

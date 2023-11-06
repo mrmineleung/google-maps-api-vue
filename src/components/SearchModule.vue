@@ -34,14 +34,14 @@ export default {
 
         if (response.data.status === 'OK') {
           // Process and emit the search results
-          const location = response.data.results.map((result : any) => ({
+          const location = response.data.results.map((result: any) => ({
             id: result.formatted_address + Date.now(),
             address: result.formatted_address,
             lat: result.geometry.location.lat,
             lng: result.geometry.location.lng,
             searchTime: new Date()
           }))
-          .find((element : Location) => element !== undefined);
+            .find((element: Location) => element !== undefined);
 
           emit('addLocation', location)
         } else if (response.data.status === 'ZERO_RESULTS') {

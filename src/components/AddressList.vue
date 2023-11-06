@@ -21,7 +21,7 @@ export default {
     const locationList = ref<Location[]>([])
     watch(() => props.locations, (locations) => {
       locationList.value = []
-      locations.forEach((element : Location) => {
+      locations.forEach((element: Location) => {
         locationList.value.push(element)
       });
     }, { immediate: true, deep: true });

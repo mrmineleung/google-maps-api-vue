@@ -5,11 +5,10 @@
         <Button @click="getUserLocation" label="Locate Me" icon="pi pi-map-marker"
           class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap mb-3"></Button>
         <SearchModule @addLocation="addLocation" />
-        <AddressList v-if="latestLocation" :locations="locations" @deleteSelected="handleDeleteSelected" />
+        <AddressList v-if="latestLocation" :locations="locations" @deleteSelected="deleteSelected" />
         <TimeDisplay v-if="latestLocation" :latestLocation="latestLocation" />
       </div>
-      <div
-        class="flex align-items-center justify-content-center font-bold text-white border-round">
+      <div class="flex align-items-center justify-content-center font-bold text-white border-round">
         <MapView :locations="locations" :latestLocation="latestLocation" />
       </div>
     </div>
@@ -50,7 +49,7 @@ export default {
               const result = response.data.results[0];
               const address = result.formatted_address;
 
-              const userLocation : any = {
+              const userLocation: any = {
                 id: address + Date.now(),
                 lat: latitude,
                 lng: longitude,
@@ -77,8 +76,7 @@ export default {
       latestLocation.value = location;
     };
 
-    const handleDeleteSelected = (selectedLocations: Location[]) => {
-      console.log(selectedLocations)
+    const deleteSelected = (selectedLocations: Location[]) => {
       locations.value = locations.value.filter(
         (location) => !selectedLocations.includes(location)
       );
@@ -89,7 +87,7 @@ export default {
       locations,
       latestLocation,
       getUserLocation,
-      handleDeleteSelected,
+      deleteSelected,
       addLocation
     };
   },
